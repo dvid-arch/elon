@@ -1,6 +1,9 @@
 import Header from "../components/Header"
 import elon from "../assets/elon.png"
 import Footer from "../components/Footer"
+import { useState } from "react"
+import vid from '../assets/vid.mp4'
+import { useEffect } from "react"
 
 
 const SolanaAddress = ({ lg }) => {
@@ -101,7 +104,7 @@ const BuyNow = () => {
 
             <div className="bg-[#070733] text-white py-20 px-[50px] flex flex-col gap-8 border-t-[8px] border-b-[8px] border-red-800">
                 <h2 className="text-[64px] font-extrabold capitalize leading-none text-center max-w-[800px] mx-auto">Buy now with a debit card or crypto!</h2>
-                <div className="flex gap-4 mx-auto">
+                <div className="flex flex-wrap gap-4 mx-auto">
                     <span className="w-[100px] rounded-lg inline-block  aspect-square border"></span>
                     <span className="w-[100px] rounded-lg inline-block  aspect-square border"></span>
                     <span className="w-[100px] rounded-lg inline-block  aspect-square border"></span>
@@ -139,7 +142,7 @@ const JoinNow = () => {
                             This is YOUR chance to join a community that’s all about fighting for what matters. The TRUMP Meme encourages a culture of success & optimism to make the world a better place. Go TRUMP! 👊</p>
                     </div>
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 hidden lg:block">
                     <img src={elon} alt="" />
                 </div>
             </div>
@@ -147,24 +150,52 @@ const JoinNow = () => {
     )
 }
 
+
 const FAQ = () => {
+    const [openIndex, setOpenIndex] = useState(null);
+
+    const faqs = [
+        { question: "Is this an official Elon Product?", answer: "No, this is not an official Elon Musk product." },
+        { question: "How does this work?", answer: "This works by leveraging advanced AI algorithms to provide accurate responses." },
+        { question: "Is this free to use?", answer: "Yes, this service is completely free to use." }
+    ];
+
+    const toggleAccordion = (index) => {
+        setOpenIndex(openIndex === index ? null : index);
+    };
+
     return (
-        <section className="py-16">
+        <section className="py-16 md:px-[50px] px-[28px]">
             <div className="flex flex-col gap-8 justify-center items-center">
                 <h2 className="text-[44px] font-bold">Frequently Asked Questions</h2>
-                <div className="flex flex-col gap-[24px]  w-full items-center">
-                    <div className="flex gap-6 justify-between w-full max-w-[700px]">
-                        <h3 className="capitalize text-[28px]">Is this an official Elon Product</h3>
-                        <div className="max-w-[32px]"><svg width="100%" height="100%" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M25.3333 15.667V16.3336C25.3333 16.7018 25.0349 17.0003 24.6667 17.0003H17V24.667C17 25.0351 16.7015 25.3336 16.3333 25.3336H15.6667C15.2985 25.3336 15 25.0351 15 24.667V17.0003H7.3333C6.96511 17.0003 6.66663 16.7018 6.66663 16.3336V15.667C6.66663 15.2988 6.96511 15.0003 7.3333 15.0003H15V7.33365C15 6.96546 15.2985 6.66699 15.6667 6.66699H16.3333C16.7015 6.66699 17 6.96546 17 7.33365V15.0003H24.6667C25.0349 15.0003 25.3333 15.2988 25.3333 15.667Z" fill="currentColor"></path>
-                        </svg></div>
-                    </div>
-                    
+                <div className="flex flex-col gap-[24px] w-full items-center">
+                    {faqs.map((faq, index) => (
+                        <div key={index} className="w-full max-w-[700px]">
+                            <button
+                                onClick={() => toggleAccordion(index)}
+                                className="flex justify-between items-center w-full py-4 text-left"
+                            >
+                                <h3 className="capitalize text-[22px] font-medium">{faq.question}</h3>
+                                <span className="text-[52px] leading-none transition-transform duration-300"
+                                    style={{ transform: openIndex === index ? "rotate(45deg)" : "rotate(0deg)" }}>
+                                    +
+                                </span>
+                            </button>
+                            <div
+                                className={`overflow-hidden transition-max-height duration-500 ease-in-out ${openIndex === index ? "max-h-40" : "max-h-0"}`}
+                            >
+                                <p className="py-2 text-gray-700">{faq.answer}</p>
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
+
+
+
 
 const JoinElon = () => {
     return (
@@ -179,7 +210,27 @@ const JoinElon = () => {
         </section>
     )
 }
+
+
 function LandingPage() {
+    // Controls when the popup modal is shown
+    const [showPopup, setShowPopup] = useState(false);
+    // Tracks if the video has loaded
+    const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
+    useEffect(() => {
+        // Show the popup modal after 3 seconds
+        const timer = setTimeout(() => {
+            setShowPopup(true);
+        }, 3000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Called when the video has loaded enough data to start playing
+    const handleVideoLoaded = () => {
+        setIsVideoLoaded(true);
+    };
+
     return (
         <div className=" flex flex-col gap-14">
             <Header />
@@ -190,7 +241,41 @@ function LandingPage() {
             <JoinNow />
             <JoinElon />
             <FAQ />
+
             <Footer />
+
+            {showPopup && (
+                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-8">
+                    <div className="bg-[#0C0C1E] p-6 pt-10 rounded-lg relative shadow-lg flex flex-col gap-8">
+                        {/* Close button */}
+                        <button
+                            className="absolute font-bold -top-3 right-3 mt-2 mr-2 text-4xl text-white  hover:text-red-900"
+                            onClick={() => setShowPopup(false)}
+                        >
+                            &times;
+                        </button>
+                        {/* Video container with a loading overlay */}
+                        <div className="relative rounded-xl overflow-hidden border border-gray-200 ">
+                            {/* Loading overlay */}
+                            {!isVideoLoaded && (
+                                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-80 z-10">
+                                    <span className="text-gray-500 text-lg">Loading video...</span>
+                                </div>
+                            )}
+                            <video
+                                controls
+                                autoPlay
+                                className={`w-full transition-opacity duration-500 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'
+                                    }`}
+                                onLoadedData={handleVideoLoaded}
+                            >
+                                <source src={vid} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     )
 }
