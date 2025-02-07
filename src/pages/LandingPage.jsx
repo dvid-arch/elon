@@ -3,6 +3,7 @@ import elon from "../assets/elon.png"
 import Footer from "../components/Footer"
 import { useState } from "react"
 import vid from '../assets/vid.mp4'
+import screen from '../assets/screen.png'
 import { useEffect } from "react"
 
 
@@ -71,6 +72,9 @@ const Alocation = () => {
             <div className="flex flex-col gap-8">
                 <h2 className="text-[48px] font-bold capitalize">Allocation</h2>
                 <p className="text-[28px] font-semibold leading-normal text-center">There are 200 million $TRUMP available on day one and will grow to a total of 1 billion $TRUMP over three years. Each group's allocation are released on their own schedule over 3 years.</p>
+            </div>
+            <div className="max-w-[600px]">
+                <img src={screen} alt="analytics"  className="w-[100%]"/>
             </div>
             <p className="text-black/70 text-[15px]">
                 Trump Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$TRUMP" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetTrumpMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. CIC Digital LLC, an affiliate of The Trump Organization, and Fight Fight Fight LLC collectively own 80% of the Trump Cards, subject to a 3-year unlocking schedule. CIC Digital LLC and Celebration Cards LLC, the owners of Fight Fight Fight LLC, will receive trading revenue derived from trading activities of Trump Meme Cards. See Terms & Conditions Here, See Card Allocation Here
