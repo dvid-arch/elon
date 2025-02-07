@@ -11,9 +11,9 @@ const SolanaAddress = ({ lg }) => {
     return (
         <div className="px-8 flex flex-col gap-4">
             <h2 className={`${lg ? "text-[48px]" : "text-[24px]"} capitalize font-bold text-center text-white`}>solana contact address</h2>
-            <div className="bg-white flex flex-col lg:flex-row gap-2 w-full p-4 items-center justify-between rounded-[24px]">
+            <div className="bg-white flex flex-col lg:flex-row gap-2 w-full p-4 items-center justify-between rounded-[24px] break-words">
                 <span className="inline-block p-4 rounded-lg bg-black text-white">CA:</span>
-                <p>6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN</p>
+                <p className="break-words break-all">6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN</p>
                 <button className="capitalize font-semibold py-[10px] px-8 bg-red-600 text-white inline-block rounded-[24px]">copy address</button>
             </div>
 
@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="py-11 px-8 bg-[#070735] rounded-[24px] flex flex-col  gap-8">
                 <div className=" text-white flex flex-col lg:flex-row gap-20 py-10">
                     <div className="textpart flex-1  flex flex-col justify-between gap-20">
-                        <h1 className="text-[92px] font-extrabold leading-none tracking-tighter uppercase text-nowrap ">
+                        <h1 className="text-[42px] md:text-[92px] font-extrabold leading-none tracking-tighter uppercase text-nowrap ">
                             THE ONLY
                             <br />
                             <span className="text-red-600">OFFICIAL</span>
