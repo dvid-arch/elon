@@ -1,12 +1,10 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 
 function Header() {
     const [isOpen, setIsOpen] = useState(false)
-    function handleOpen () {
-        console.log('clicked')
-        setIsOpen(!isOpen)
-    }
+   
     return (
         <header className="px-[28px] md:px-[50px] py-10 relative">
 
@@ -16,7 +14,7 @@ function Header() {
                     <nav className="hidden lg:flex justify-between  capitalize flex-1 gap-4">
                         <a href="#">home</a>
                         <a href="#">contact address</a>
-                        <a href="#">how to buy</a>
+                        <Link to={'/howtobuy'}>how to buy</Link>
                         <a href="#">more</a>
                     </nav>
                     <div className="mobilenav cursor-pointer bg-black/10 flex flex-col gap-[6px] lg:hidden hover:sca" onClick={()=>setIsOpen(!isOpen)}>
@@ -28,11 +26,11 @@ function Header() {
                     <nav className={`lg:hidden transition-transform transfo ${isOpen ? "max-h-screen opacity-100 scale-100":"max-h-0 opacity-0 scale-95"} overflow-hidden absolute text-black p-6 bg-white  left-0 right-0 mx-auto w-fit top-[85%] shadow-lg`} >
                         <a href="#" className="block text-center mb-4">home</a>
                         <a href="#" className="block text-center mb-4 text-nowrap">contact address</a>
-                        <a href="#" className="block text-center mb-4">how to buy</a>
+                        <Link to="/howtobuy" className="block text-center mb-4">how to buy</Link>
                         <a href="#" className="block text-center ">more</a>
                     </nav>
 
-                    <a href="#" className=" text-nowrap capitalize font-semibold py-2 px-8 bg-red-600 text-white inline-block rounded-[24px]">buy now</a>
+                    <Link to="/howtobuy" className=" text-nowrap capitalize font-semibold py-2 px-8 bg-red-600 text-white inline-block rounded-[24px]">buy now</Link>
                 </div>
             </div>
         </header>

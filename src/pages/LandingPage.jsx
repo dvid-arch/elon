@@ -5,6 +5,7 @@ import { useState } from "react"
 import vid from '../assets/vid.mp4'
 import screen from '../assets/screen.png'
 import { useEffect } from "react"
+import { Link } from "react-router-dom"
 
 
 
@@ -47,10 +48,10 @@ const Hero = () => {
 
                     <div className="flex flex-col gap-4 lg:flex-row justify-center lg:gap-8 text-white  mx-auto w-full">
 
-                        <a href="#" className="py-[24px] px-[40px] flex-1 uppercase justify-center rounded-[24px] font-bold text-[24px] leading-none gap-1 text-center flex lg:flex-col items-center bg-red-700 p-4">
+                        <Link to={'/howtobuy'} className="py-[24px] px-[40px] flex-1 uppercase justify-center rounded-[24px] font-bold text-[24px] leading-none gap-1 text-center flex lg:flex-col items-center bg-red-700 p-4">
                             buy now with
                             crypto
-                        </a>
+                        </Link>
 
                     </div>
                     <SolanaAddress />
