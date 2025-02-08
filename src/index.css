@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+*{
+  font-family:"neue-haas-grotesk-display",sans-serif;
+}
 .button-85 {
   padding: 12px 32px;
   font-size: 18px;
