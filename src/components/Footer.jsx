@@ -5,7 +5,7 @@ function Footer() {
         <footer className="px-[28px] py-10 md:px[50px] bg-[#030327] text-white">
 
             <div className="flex flex-col items-center gap-8">
-                <h2 className="text-[52px] font-extrabold">Elon Coin</h2>
+                <h2 className="text-[52px] font-extrabold"><span className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">Elon</span> Coin</h2>
                 <div className="flex flex-col items-center md:flex-row justify-between  capitalize flex-1 gap-4 w-fit">
                     <a href="#">Home</a>
                     <a href="#">About</a>

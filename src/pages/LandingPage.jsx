@@ -85,7 +85,7 @@ const CryptoPresident = () => {
             <div className="flex flex-col md:flex-row items-start gap-20 p-2 py-8 sm:p-8 border rounded-[24px] relative bg-[#0A0A47]">
                 <div className="leading-none flex-1 flex-col md:sticky top-0 bottom-0">
                     <h2 className="uppercase text-[36px] sm:text-[48px] font-bold mb-2 ">Elon: <br />the crypto president</h2>
-                    <p className="text-[48px] capitalize">A Community Celebrating Courage & Strength</p>
+                    <p className="text-[48px] capitalize bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">A Community Celebrating Courage & Strength</p>
                 </div>
                 <div className="flex-1 text-[28px] flex flex-col gap-8">
                     <h2 className="text-[48px] leading-none">$Elon are now freely tradeable on the blockchain.</h2>
@@ -196,7 +196,7 @@ const FAQ = () => {
 
 const JoinElon = () => {
     return (
-        <section className="py-20 bg-[#0C0C1E] ">
+        <section className="py-20 bg-[#0C0C1E] uppercase">
 
             <div className="bg-[#0C0C1E] ">
 
