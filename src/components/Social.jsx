@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const transactions = [
   { id: 1, name: "John Doe", location: "New York", amount: "$500" },
@@ -13,8 +13,8 @@ const InfiniteSlider = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    // Duplicate the transactions array to create a seamless loop
-    setDuplicatedTransactions([...transactions, ...transactions]);
+    // Duplicate the transactions array multiple times for a smoother loop
+    setDuplicatedTransactions([...transactions, ...transactions, ...transactions]);
   }, []);
 
   return (
@@ -24,27 +24,16 @@ const InfiniteSlider = () => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="relative">
-        {/* Main slider container */}
         <div 
-          className={`flex animate-scroll transition-transform duration-500 ${
-            isHovered ? 'animate-pause' : ''
-          }`}
-          style={{
-            animation: isHovered ? 'none' : 'scroll 20s linear infinite',
-            '@keyframes scroll': {
-              '0%': { transform: 'translateX(0)' },
-              '100%': { transform: 'translateX(-50%)' }
-            }
-          }}
+          className={`flex ${isHovered ? 'pause' : 'sliding'}`}
         >
-          {/* First set of cards */}
-          <div className="flex gap-4 px-4">
-            {duplicatedTransactions.map((tx) => (
+          <div className="flex gap-4 px-4 sliding-content">
+            {duplicatedTransactions.map((tx, i) => (
               <div
-                key={tx.id}
+                key={`${tx.id}-${i}`}
                 className="flex-shrink-0 w-64 md:w-72 lg:w-80"
               >
-                <div className="bg-white rounded-lg shadow p-6 transform transition-transform duration-300 hover:scale-105">
+                <div className="bg-white rounded-lg shadow p-6 transform transition-all duration-300 hover:scale-105">
                   <div className="text-center">
                     <p className="text-gray-800 text-sm font-semibold">
                       {tx.name}
@@ -62,27 +51,35 @@ const InfiniteSlider = () => {
           </div>
         </div>
 
-        {/* Gradient overlays for smooth transition */}
+        {/* Gradient overlays */}
         <div className="absolute top-0 left-0 h-full w-16 bg-gradient-to-r from-gray-50 to-transparent pointer-events-none" />
         <div className="absolute top-0 right-0 h-full w-16 bg-gradient-to-l from-gray-50 to-transparent pointer-events-none" />
       </div>
 
-      <style jsx global>{`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
+      <style>
+        {`
+          .sliding {
+            animation: slide 25s linear infinite;
           }
-          100% {
-            transform: translateX(-50%);
+          
+          .sliding-content {
+            min-width: max-content;
           }
-        }
-        .animate-scroll {
-          animation: scroll 20s linear infinite;
-        }
-        .animate-pause {
-          animation-play-state: paused;
-        }
-      `}</style>
+
+          @keyframes slide {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          
+          .pause {
+            animation-play-state: paused;
+          }
+        `}
+      </style>
     </div>
   );
 };
