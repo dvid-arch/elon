@@ -2,7 +2,7 @@ import Header from "../components/Header"
 import elon from "../assets/elon.png"
 import Footer from "../components/Footer"
 import { useState } from "react"
-// import vid from '../assets/vid.mp4'
+import vid from '../assets/vid.mp4'
 import screen from '../assets/screen.png'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
@@ -284,7 +284,7 @@ function LandingPage() {
                                     }`}
                                 onLoadedData={handleVideoLoaded}
                             >
-                                <source src={"#"} type="video/mp4" />
+                                <source src={vid} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                         </div>

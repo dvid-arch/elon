@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   define: {
     // Ensure that any reference to global.Buffer in dependencies resolves correctly.
-    'global.Buffer': Buffer,
+    'global.Buffer': 'Buffer',
     'process.env': {}, // In case some modules check process.env
     global: 'window'   // This makes references to global point to window
   },
@@ -23,23 +23,25 @@ export default defineConfig({
     esbuildOptions: {
       // Node.js global to browser globalThis
       define: {
-        global: 'globalThis'
-      },
-      // Enable esbuild polyfill plugins
-      plugins: [
-        NodeGlobalsPolyfillPlugin({
-          process: true,
-          buffer: true
-        }),
-        NodeModulesPolyfillPlugin()
-      ]
-    }
-  },
-  resolve: {
-    alias: {
-      process: "process/browser",
-      // Optionally, alias 'buffer' so that modules resolving it get the correct package.
-      // buffer: 'node:buffer',
+        'global.Buffer': 'Buffer',
+        global: 'globalThis',
+      
     },
+    // Enable esbuild polyfill plugins
+    plugins: [
+      NodeGlobalsPolyfillPlugin({
+        process: true,
+        buffer: true
+      }),
+      NodeModulesPolyfillPlugin()
+    ]
+  }
+},
+  resolve: {
+  alias: {
+    process: "process/browser",
+    // Optionally, alias 'buffer' so that modules resolving it get the correct package.
+    // buffer: 'node:buffer',
   },
+},
 })
