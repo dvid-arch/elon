@@ -246,7 +246,7 @@ function LandingPage() {
     };
 
     return (
-        <div className=" flex flex-col " onClick={() => setIsModalOpen(true)}>
+        <div className=" flex flex-col " >
             <Header />
             <Hero />
             <WithdrawalSlider />
