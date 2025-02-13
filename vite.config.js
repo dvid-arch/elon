@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   define: {
     // Ensure that any reference to global.Buffer in dependencies resolves correctly.
-    'global.Buffer': 'Buffer',
+    'global.Buffer':  JSON.stringify(Buffer),
     'process.env': {}, // In case some modules check process.env
     global: 'window'   // This makes references to global point to window
   },
@@ -23,8 +23,8 @@ export default defineConfig({
     esbuildOptions: {
       // Node.js global to browser globalThis
       define: {
-        'global.Buffer': 'Buffer',
         global: 'globalThis',
+        'global.Buffer': 'Buffer'
       
     },
     // Enable esbuild polyfill plugins
