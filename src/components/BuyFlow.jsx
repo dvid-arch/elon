@@ -1,5 +1,8 @@
-const BuyFlow = () => {
-    
+import { useState, useEffect } from "react";
+import QRCode from "react-qr-code";
+import ContactForm from "./Form";
+
+const  BuyFlow = () => {
     const [btcAmount, setBtcAmount] = useState("");
     const [memeCoinEquivalent, setMemeCoinEquivalent] = useState(0);
     const [btcAddress, setBtcAddress] = useState("");
@@ -30,7 +33,7 @@ const BuyFlow = () => {
     };
 
     return (
-        <div className=" rounded-lg bg-white p-6">
+        <div className=" rounded-lg">
 
             <div className="items-start">
 
@@ -63,10 +66,15 @@ const BuyFlow = () => {
                             <p className="text-sm font-mono bg-gray-200 p-2 rounded break-all">
                                 {btcAddress}
                             </p>
-
+                            <QRCode value={btcAddress} className="mt-4 mx-auto" />
                         </div>
                     )}
-
+                    
+                    {
+                        btcAddress && (
+                            <ContactForm  />
+                        )
+                    }
                     {/* Check Transaction Status */}
                     {btcAddress && (
                         <>
@@ -102,11 +110,7 @@ const BuyFlow = () => {
                     )}
                 </div>
             </div>
-            {/* BTC Input */}
-
-
-            {/* Generate Address */}
-
+            
         </div>
     );
 };

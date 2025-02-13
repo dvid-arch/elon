@@ -6,22 +6,12 @@ import vid from '../assets/vid.mp4'
 import screen from '../assets/screen.png'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
+import WithdrawalSlider from "../components/Social"
+import BuyCoinModal from "../components/BuyCoinModal"
 
 
 
-const SolanaAddress = ({ lg }) => {
-    return (
-        <div className="px-8 flex flex-col gap-4">
-            <h2 className={`${lg ? "text-[32px] md:text-[48px]" : "text-[24px]"} capitalize font-bold text-center text-white`}>solana contact address</h2>
-            <div className="bg-white flex flex-col lg:flex-row gap-2 w-full p-4 items-center justify-between rounded-[24px] break-words">
-                <span className="inline-block p-4 rounded-lg bg-black text-white">CA:</span>
-                <p className="break-words break-all">6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN</p>
-                <button className="capitalize font-semibold py-[10px] px-8 bg-red-600 text-white inline-block rounded-[24px]">copy address</button>
-            </div>
 
-        </div>
-    )
-}
 const Hero = () => {
     return (
         <div className="px-[16px] md:px-[50px] mb-20">
@@ -54,10 +44,9 @@ const Hero = () => {
                         </Link>
 
                     </div>
-                    <SolanaAddress />
 
                 </div>
-                <p className="text-white/70">Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. See Terms & Conditions Here, See Card Allocation Here</p>
+                <p className="text-white/70">Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. See <a href="#">Terms & Conditions</a> Here</p>
             </div>
         </div>
     )
@@ -88,11 +77,11 @@ const CryptoPresident = () => {
                     <p className="text-[48px] capitalize bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">A Community Celebrating Courage & Strength</p>
                 </div>
                 <div className="flex-1 text-[28px] flex flex-col gap-8">
-                    <h2 className="text-[48px] leading-none">$Elon are now freely tradeable on the blockchain.</h2>
-                    <p>On July 13, 2024, President Elon faced death and came up fighting! With his fist in the air and the iconic battle cry FIGHT FIGHT FIGHT, President Elon showed the world what a LEADER is made of. His strength and courage ignited a movement becoming the most memorable meme of the century.</p>
+                    <h2 className="text-[48px] leading-none">$Elon are now freely tradeable on the bitcoin blockchain.</h2>
+                    <p>On July 13, 2024, President Trump faced death and came up fighting! With his fist in the air and the iconic battle cry FIGHT FIGHT FIGHT, President Trump showed the world what a LEADER is made of and Elon was there as his support. His strength and courage ignited a movement becoming the most memorable meme of the century.</p>
 
-                    <p>Now, you can get your piece of history. This Elon Meme celebrates a leader who doesn’t back down, no matter the odds. Join the Elon Community - we’re all about fighting for what matters.
-                        Allocation</p>
+                    <p>Now, you can get your piece of history. This Elon Meme celebrates a leader who doesn’t back down, no matter the odds. Join the Elon Community - we’re all about fighting for Freedom and Efficiency.
+                        We're all about making America great again!</p>
                 </div>
             </div>
         </div>
@@ -108,12 +97,12 @@ const BuyNow = () => {
 
                 <div className="flex-col flex gap-8">
 
-                    <SolanaAddress lg={true} />
+
                     <div>
                         <h3 className="text-2xl font-bold text-white text-center">Don't Know how to buy with Crypto Click <a href="#" className="text-blue-400 underline">here</a></h3>
                     </div>
                     <p className="text-white/70 text-[15px]">
-                        Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. CIC Digital LLC, an affiliate of The Elon Organization, and Fight Fight Fight LLC collectively own 80% of the Elon Cards, subject to a 3-year unlocking schedule. CIC Digital LLC and Celebration Cards LLC, the owners of Fight Fight Fight LLC, will receive trading revenue derived from trading activities of Elon Meme Cards. See Terms & Conditions Here, See Card Allocation Here
+                        Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. CIC Digital LLC, an affiliate of The Elon Organization, and Fight Fight Fight LLC collectively own 80% of the Elon Cards, subject to a 3-year unlocking schedule. CIC Digital LLC and Celebration Cards LLC, the owners of Fight Fight Fight LLC, will receive trading revenue derived from trading activities of Elon Meme Cards.
                     </p>
                 </div>
 
@@ -152,9 +141,13 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
-        { question: "Is this an official Elon Product?", answer: "No, this is not an official Elon Musk product." },
-        { question: "How does this work?", answer: "This works by leveraging advanced AI algorithms to provide accurate responses." },
-        { question: "Is this free to use?", answer: "Yes, this service is completely free to use." }
+        { question: "Is this an official Elon Product?", answer: "Yes, this is the only Official Elon Meme, by President Donald J. Elon." },
+        { question: "What is the official contract address and symbol for the Elon Meme?", answer: "CA: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN" },
+        { question: "How can I get Elon Memes?", answer: "Moonshot is the easiest way. Users sign up with an email address, can deposit with bitcoin and receive your $Elon within minutes." },
+        { question: "What is a meme?", answer: "Merriam-Webster's meme noun: 1: an idea, behavior, style, or usage that spreads from person to person within a culture." },
+        { question: "Which blockchain network are the Elon Memes minted?", answer: "Bitcoin" },
+        { question: "What are the Elon Memes?", answer: "Elon Memes are fungible crypto assets created and tracked on the bitcoin blockchain." },
+
     ];
 
     const toggleAccordion = (index) => {
@@ -233,7 +226,7 @@ const JoinElon = () => {
 function LandingPage() {
     // Controls when the popup modal is shown
     const [showPopup, setShowPopup] = useState(false);
-   
+
     // Tracks if the video has loaded
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
@@ -245,7 +238,7 @@ function LandingPage() {
         return () => clearTimeout(timer);
     }, []);
 
-    
+
 
     // Called when the video has loaded enough data to start playing
     const handleVideoLoaded = () => {
@@ -253,16 +246,17 @@ function LandingPage() {
     };
 
     return (
-        <div className=" flex flex-col " onClick={()=>setIsModalOpen(true)}>
+        <div className=" flex flex-col " onClick={() => setIsModalOpen(true)}>
             <Header />
             <Hero />
+            <WithdrawalSlider />
             <CryptoPresident />
             <Alocation />
             <BuyNow />
             <JoinNow />
             <JoinElon />
             <FAQ />
-           
+            <BuyCoinModal />
             <Footer />
 
             {showPopup && (
@@ -298,7 +292,7 @@ function LandingPage() {
                 </div>
             )}
 
-            
+
         </div>
 
     )
