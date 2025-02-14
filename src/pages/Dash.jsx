@@ -30,7 +30,7 @@ const Dashboard = () => {
                 localStorage.setItem('publicKey', username)
                 setNeedPublicKey(!needPublicKey)
             } else {
-                setError('Username must be at least 3 characters long');
+                setError('publicAddress must be at least 26 characters long');
             }
             setIsLoading(false);
         }, 1000);
