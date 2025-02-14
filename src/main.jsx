@@ -5,7 +5,11 @@ import App from './App.jsx'
 import './index.css'
 
 import { Buffer } from "buffer/";
-globalThis.Buffer = Buffer;
+globalThis.Buffer = JSON.stringify(Buffer);
+
+if (!window.Buffer) {
+  window.Buffer = Buffer;
+}
 
 
 

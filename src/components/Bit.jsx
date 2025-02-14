@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import generateAddressAndCheckTransactions from "../util/bit";
 import ContactForm from "./Form";
 import QRCode from "react-qr-code";
-import { address } from "bitcoinjs-lib";
+// import { address } from "bitcoinjs-lib";
 
 
 const BitcoinAddressGenerator = ({ storedAddress }) => {

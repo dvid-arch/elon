@@ -5,14 +5,24 @@ import topLevelAwait from 'vite-plugin-top-level-await';
 import { Buffer } from 'node:buffer';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill'
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill'
+import inject from '@rollup/plugin-inject'
 
 // https://vitejs.dev/config/
-export default defineConfig({
+export default defineConfig(  {
   plugins: [
     react(),
     wasm(),
-    topLevelAwait()
+    topLevelAwait(),
+
   ],
+  build: {
+    rollupOptions: {
+      plugins: [inject({ Buffer: ['buffer', 'Buffer'] })],
+    },
+  },
+  server: {
+    historyApiFallback: true, // Ensures React Router works
+  },
   define: {
     // Ensure that any reference to global.Buffer in dependencies resolves correctly.
     'global.Buffer': JSON.stringify(Buffer),

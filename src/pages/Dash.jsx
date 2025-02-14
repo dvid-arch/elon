@@ -18,6 +18,7 @@ const Dashboard = () => {
     const [memeCoinBalance, setMemeCoinBalance] = useState(1000); // Dummy balance
     const [open, setOpen] = useState(true)
     const [needPublicKey, setNeedPublicKey] = useState(localStorage.getItem('publicKey'))
+    const [user, setUser] = useState()
     
     const dummyTransactions = [
         // { id: 1, type: "Buy", amount: 5000, date: "2025-02-01", status: "Confirmed" },
@@ -33,14 +34,20 @@ const Dashboard = () => {
     }, [])
 
 
+    useEffect(()=>{
+        if(localStorage.getItem('publicKey')){
+            console.log(localStorage.getItem('publicKey'))
+            setUser(localStorage.getItem('publicKey'))
+        }
+    }, [])
 
     return (
         <div className="">
 
-            <div className="flex flex-col gap-2 justify-between  border-b-2 pt-6 px-8">
+            <div className="flex flex-col sm:flex-row gap-2 justify-between  border-b-2 pt-6 px-8">
                 <h2 className="leading-none font-bold text-[32px]">Dashboard</h2>
                 <div className="flex items-end">
-                    <p className="text-sm">user: {"<david123>"} </p>
+                    <p className="text-sm sm:text-xl"> &lt; user: {user} &gt;</p>
                 </div>
             </div>
             <div className="px-8 py-10">
@@ -92,7 +99,7 @@ const Dashboard = () => {
             {open && (
                 <div className="">
 
-                    <div className="fixed z-10 w-full max-w-[400px] p-6 bg-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                    <div className="fixed z-10 w-full max-w-[400px] rounded-lg p-6 bg-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                         <BitcoinAddressGenerator storedAddress={true} />
                         <XIcon className="absolute top-4 right-4" onClick={() => setOpen(false)}></XIcon>
                     </div>
