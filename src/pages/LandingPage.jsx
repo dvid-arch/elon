@@ -14,7 +14,7 @@ import BuyCoinModal from "../components/BuyCoinModal"
 
 const Hero = () => {
     return (
-        <div className="px-[16px] md:px-[50px] mb-20">
+        <div className="px-[16px] md:px-[50px] mb-20 max-w-[1200px] mx-auto">
 
             <div className="py-11 px-8 bg-[#070735] rounded-[24px] flex flex-col  gap-8">
                 <div className=" text-white flex flex-col lg:flex-row gap-20 py-10">
@@ -54,7 +54,7 @@ const Hero = () => {
 
 const Alocation = () => {
     return (
-        <div className="px-[16px] md:px-[50px] py-20 flex flex-col gap-8 items-center text-center" >
+        <div className="px-[16px] md:px-[50px] py-20 flex flex-col gap-8 items-center text-center max-w-[1200px] mx-auto" >
             <div className="flex flex-col gap-8">
                 <h2 className="text-[32px] md:text-[64px] font-bold capitalize">Allocation</h2>
                 <p className="text-[28px] font-semibold leading-normal text-center">There are 200 million $Elon available on day one and will grow to a total of 1 billion $Elon over three years. Each group's allocation are released on their own schedule over 3 years.</p>
@@ -71,7 +71,7 @@ const Alocation = () => {
 const CryptoPresident = () => {
     return (
         <div className="px-[16px] md:px-[50px] py-40 bg-[#070735] text-white">
-            <div className="flex flex-col md:flex-row items-start gap-20 p-2 py-8 sm:p-8 border rounded-[24px] relative bg-[#0A0A47]">
+            <div className="flex flex-col md:flex-row items-start gap-20 p-2 py-8 max-w-[1200px] mx-auto sm:p-8 border rounded-[24px] relative bg-[#0A0A47]">
                 <div className="leading-none flex-1 flex-col md:sticky top-0 bottom-0">
                     <h2 className="uppercase text-[36px] sm:text-[48px] font-bold mb-2 ">Elon: <br />the crypto president</h2>
                     <p className="text-[48px] capitalize bg-gradient-to-br from-blue-500 to-purple-500 bg-clip-text text-transparent">A Community Celebrating Courage & Strength</p>
@@ -90,9 +90,9 @@ const CryptoPresident = () => {
 
 const BuyNow = () => {
     return (
-        <div>
+        <div className="bg-[#070733] border-t-[8px] border-b-[8px] border-red-800">
 
-            <div className="bg-[#070733] py-20 px-[50px] flex flex-col gap-8 border-t-[8px] border-b-[8px] border-red-800">
+            <div className=" py-20 px-[50px] max-w-[1200px] mx-auto flex flex-col gap-8 ">
                 <h2 className="text-[32px] text-white md:text-[64px] font-extrabold capitalize leading-none text-center max-w-[800px] mx-auto">Buy Now with  Crypto!</h2>
 
                 <div className="flex-col flex gap-8">
@@ -107,17 +107,14 @@ const BuyNow = () => {
                 </div>
 
             </div>
-            <div className="bg-[#131385] px-[16px] md:px-[50px] py-20   relative">
-
-
-            </div>
+           
         </div>
     )
 }
 
 const JoinNow = () => {
     return (
-        <section className="px-[16px] md:px-[50px] py-20 ">
+        <section className="px-[16px] md:px-[50px] py-20 max-w-[1200px] mx-auto">
 
             <div className="flex flex-col md:gap-20 md:flex-row">
                 <div className="flex-1 flex flex-col gap-8">
@@ -155,7 +152,7 @@ const FAQ = () => {
     };
 
     return (
-        <section className="py-16 md:px-[50px] px-[16px]">
+        <section className="py-16 md:px-[50px] px-[16px] max-w-[1200px] mx-auto">
             <div className="flex flex-col gap-8 justify-center items-center">
                 <h2 className="text[36px] md:text-[64px] font-bold">Frequently Asked Questions</h2>
                 <div className="flex flex-col gap-[24px] w-full items-center">
@@ -191,7 +188,7 @@ const JoinElon = () => {
     return (
         <section className="py-20 bg-[#0C0C1E] uppercase">
 
-            <div className="bg-[#0C0C1E] ">
+            <div className="bg-[#0C0C1E] max-w-[1200px] mx-auto">
 
                 <h2 className="text-center text-[32px] md:text-[64px] font-bold leading-none text-white">JOIN Elon'S SPECIAL COMMUNITY.
                     <span className="block text-red-600 text-[96px]">$Elon</span>
