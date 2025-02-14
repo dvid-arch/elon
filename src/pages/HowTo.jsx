@@ -160,7 +160,7 @@ const BuyMemeCoinGuide = () => {
         <ul className="list-disc list-inside space-y-2 text-gray-600">
           <li>
             <a
-              href="#"
+              href="https://youtu.be/CxTATIzii7I?si=Eal483CemVjzXWD1  "
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
@@ -170,7 +170,7 @@ const BuyMemeCoinGuide = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="https://youtu.be/Cp_fGaPOOA8?si=Zgdj51Npz5rABAaD"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"
@@ -180,7 +180,7 @@ const BuyMemeCoinGuide = () => {
           </li>
           <li>
             <a
-              href="#"
+              href="https://youtu.be/7gHtUDQnILM?si=RSnmld4t7CPkccvp"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline"

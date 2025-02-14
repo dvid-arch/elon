@@ -22,7 +22,7 @@ const MemeCoinChart = () => {
   return (
     <div className="pr-4 pt-4 bg-white rounded-lg border-2 border-gray-200">
       <div className='px-6 pb-4'>
-        <h2 className=" font-bold text-gray-800 ">total portfolio</h2>
+        <h2 className=" font-bold text-gray-800 ">total profit made so far</h2>
         <p className='text-2xl font-bold text-gray-700'>$35,000.64</p>
         <div></div>
       </div>

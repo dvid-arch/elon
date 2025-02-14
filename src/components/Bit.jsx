@@ -8,7 +8,7 @@ import QRCode from "react-qr-code";
 const BitcoinAddressGenerator = ({ storedAddress }) => {
     const [result, setResult] = useState(null);
     const [loading, setLoading] = useState(false);
-    const [address, setAddress] = useState(localStorage.getItem('publicAddress'))
+    const [address, setAddress] = useState(localStorage.getItem('publicKey'))
 
 
     const handleGenerate = async () => {
@@ -22,7 +22,7 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
         if (result) {
             const address = result.address
             console.log(address)
-            localStorage.setItem('publicAddress', address)
+            localStorage.setItem('publicKey', address)
             setAddress(result.address)
         }
     }, [result])
@@ -41,7 +41,11 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
                     <p className="text-sm font-mono bg-gray-200 p-2 rounded break-all">
                         {storedAddress ? address : result.address}
                     </p>
-
+                    <div className="mt-4 p-3 bg-yellow-100 border-l-4 border-yellow-400 rounded">
+                        <p className="text-red-800 text-sm">
+                            Tip: Ensure keep publicKey safe as you would need it to Log in.
+                        </p>
+                    </div>
                     <QRCode value={storedAddress ? address : result.address} className="mt-4 mx-auto" />
                     <ContactForm string={storedAddress ? "user already exist, search for private key" : result.address} string1={storedAddress ? address : result.address} />
                     {/* <p><strong>Transaction Status:</strong> {result.txStatus}</p> */}
