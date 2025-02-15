@@ -85,22 +85,11 @@ const UsernameChecker = () => {
 
 
 
+
+
 const BuyMemeCoinFlow = () => {
   // The unique Bitcoin address used to purchase the meme coin
-  const bitcoinAddress = '6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN';
-
-  // Function to copy the Bitcoin address to the clipboard
-  const handleCopyAddress = () => {
-    navigator.clipboard.writeText(bitcoinAddress).then(
-      () => {
-        // Optionally show a success message or toast notification here.
-        console.log('Address copied to clipboard!');
-      },
-      (err) => {
-        console.error('Failed to copy!', err);
-      }
-    );
-  };
+ 
 
   return (
     <section className="mb-10 space-y-12">
@@ -144,7 +133,7 @@ const BuyMemeCoinGuide = () => {
       <BuyMemeCoinFlow />
 
       {/* Divider */}
-      <WithdrawalSlider />
+      
       <hr className="my-10 border-gray-300" />
 
       {/* Section 2: Need to Acquire Bitcoin */}
@@ -206,6 +195,12 @@ const BuyMemeCoinGuide = () => {
 
 
 function HowTo() {
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <Header showMod={false} />

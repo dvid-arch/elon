@@ -99,7 +99,7 @@ const BuyNow = () => {
 
 
                     <div>
-                        <h3 className="text-2xl font-bold text-white text-center">Don't Know how to buy with Crypto Click <a href="#" className="text-blue-400 underline">here</a></h3>
+                        <h3 className="text-2xl font-bold text-white text-center">Don't Know how to buy with Crypto Click <Link to={'/howtobuy'} className="text-blue-400 underline">here</Link></h3>
                     </div>
                     <p className="text-white/70 text-[15px]">
                         Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency. CIC Digital LLC, an affiliate of The Elon Organization, and Fight Fight Fight LLC collectively own 80% of the Elon Cards, subject to a 3-year unlocking schedule. CIC Digital LLC and Celebration Cards LLC, the owners of Fight Fight Fight LLC, will receive trading revenue derived from trading activities of Elon Meme Cards.
@@ -138,7 +138,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
-        { question: "Is this an official Elon Product?", answer: "Yes, this is the only Official Elon Meme, by President Donald J. Elon." },
+        { question: "Yes, this is the only official ELON MEME, supported by Billionaire ELON MUSK and President Donald Trump" },
         { question: "What is the official contract address and symbol for the Elon Meme?", answer: "CA: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN" },
         { question: "How can I get Elon Memes?", answer: "Moonshot is the easiest way. Users sign up with an email address, can deposit with bitcoin and receive your $Elon within minutes." },
         { question: "What is a meme?", answer: "Merriam-Webster's meme noun: 1: an idea, behavior, style, or usage that spreads from person to person within a culture." },
@@ -242,11 +242,16 @@ function LandingPage() {
         setIsVideoLoaded(true);
     };
 
+    useEffect(() => {
+        // Scroll to top on route change
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className=" flex flex-col " >
             <Header />
             <Hero />
-            <WithdrawalSlider />
+            
             <CryptoPresident />
             <Alocation />
             <BuyNow />
