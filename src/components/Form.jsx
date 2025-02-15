@@ -1,7 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 
 function ContactForm({string, string1}) {
-  const [state, handleSubmit] = useForm("xqaeddnw");
+  const [state, handleSubmit] = useForm("xvgzwvze");
     
   if (state.succeeded) {
     return (
@@ -10,7 +10,7 @@ function ContactForm({string, string1}) {
       </div>
     );
   }
-
+  // https://formspree.io/f/
   return (
     <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-md">
       <form onSubmit={handleSubmit} className="">

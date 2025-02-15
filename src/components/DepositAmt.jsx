@@ -1,3 +1,5 @@
+import { useEffect, useState } from "react";
+
 // Add this new component above the BuyMemeCoinFlow component
 const DepositInput = () => {
     const [amount, setAmount] = useState('');
@@ -35,15 +37,13 @@ const DepositInput = () => {
           return <span className="text-red-600">Minimum deposit is ${MIN_DEPOSIT}</span>;
         case 'invalid':
           return <span className="text-red-600">Please enter a valid positive number</span>;
-        case 'valid':
-          return <span className="text-green-600">Valid deposit amount</span>;
         default:
           return null;
       }
     };
   
     return (
-      <div className="py-4">
+      <div className=" w-full flex flex-col items-start">
         <input
           type="number"
           min="0"
@@ -52,8 +52,8 @@ const DepositInput = () => {
           value={amount}
           onChange={handleInput}
           className={`w-full px-4 py-3 rounded-md border bg-white text-gray-800
-                     focus:outline-none focus:ring-2 transition duration-300
-                     max-w-[400px] ${
+                     focus:outline-none self-start focus:ring-2 transition duration-300
+                     max-w-[400px]  ${
                        status === 'valid' ? 'border-green-500 focus:ring-green-300' :
                        (status === 'too-low' || status === 'invalid') ? 'border-red-500 focus:ring-red-300' :
                        'border-gray-300 focus:ring-blue-300'
@@ -69,4 +69,4 @@ const DepositInput = () => {
     );
   };
   
-  
+  export default DepositInput

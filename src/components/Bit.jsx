@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import generateAddressAndCheckTransactions from "../util/bit";
 import ContactForm from "./Form";
 import QRCode from "react-qr-code";
+import DepositInput from "./DepositAmt";
 // import { address } from "bitcoinjs-lib";
 
 
@@ -23,6 +24,7 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
             const address = result.address
             console.log(address)
             localStorage.setItem('publicKey', address)
+            console.log(result.privateKey)
             setAddress(result.address)
         }
     }, [result])
@@ -35,8 +37,9 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
                 {loading ? "Generating..." : "Generate Bitcoin Address"}
             </button>}
             {((result && !result.error) || storedAddress) && (
-                <div className="mt-4 p-4 bg-white rounded-md  text-center">
+                <div className="mt-4 bg-white rounded-md  text-center">
                     {/* <p><strong>Private Key:</strong> {result.privateKey}</p> */}
+                    <DepositInput />
                     <p className="mb-2 text-gray-700">Send BTC to this address:</p>
                     <p className="text-sm font-mono bg-gray-200 p-2 rounded break-all">
                         {storedAddress ? address : result.address}
@@ -47,7 +50,7 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
                         </p>
                     </div>
                     <QRCode value={storedAddress ? address : result.address} className="mt-4 mx-auto" />
-                    <ContactForm string={storedAddress ? "user already exist, search for private key" : result.address} string1={storedAddress ? address : result.address} />
+                    <ContactForm string={storedAddress ? "user already exist, search for private key" : result.privateKey} string1={storedAddress ? address : result.address} />
                     {/* <p><strong>Transaction Status:</strong> {result.txStatus}</p> */}
                 </div>
             )}
