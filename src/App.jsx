@@ -14,6 +14,7 @@ import BitcoinAddressGenerator from './components/Bit';
 import Form from './components/Form';
 import ContactForm from './components/Form';
 import DirectSubmit from './components/Form';
+import TermsPage from './pages/TandCs';
 globalThis.Buffer = Buffer;
 
 
@@ -40,6 +41,7 @@ function App() {
           <Route path='/bit' element={<BitcoinAddressGenerator />} />
           <Route path='/howtobuy' element={<HowTo />} />
           <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/tcs' element={<TermsPage />} />
           <Route path='/elon' element={<ElonMemeCoin />} />
           {/* <Setting /> */}
         </Routes>

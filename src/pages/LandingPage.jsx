@@ -107,7 +107,7 @@ const BuyNow = () => {
                 </div>
 
             </div>
-           
+
         </div>
     )
 }
@@ -257,28 +257,32 @@ function LandingPage() {
             <Footer />
 
             {showPopup && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-8">
-                    <div className="bg-[#0C0C1E] p-6 pt-10 rounded-lg relative shadow-lg flex flex-col gap-8">
+                <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4 animate-fadeIn">
+                    <div className="bg-[#0C0C1E] bg-opacity-90 backdrop-blur-xl p-6 pt-12 rounded-2xl relative shadow-2xl border border-gray-700 flex flex-col gap-6 w-full max-w-lg">
                         {/* Close button */}
                         <button
-                            className="absolute font-bold -top-3 right-3 mt-2 mr-2 text-4xl text-white  hover:text-red-900"
+                            className="absolute -top-4 -right-4 bg-white bg-opacity-20 hover:bg-opacity-40 text-white font-bold text-4xl w-12 h-12 flex items-center justify-center rounded-full transition"
                             onClick={() => setShowPopup(false)}
                         >
                             &times;
                         </button>
-                        {/* Video container with a loading overlay */}
-                        <div className="relative rounded-xl overflow-hidden border border-gray-200 ">
-                            {/* Loading overlay */}
+
+                        {/* Video Caption */}
+                        <h2 className="text-lg sm:text-xl text-white font-extrabold text-center uppercase tracking-wider bg-gradient-to-r from-yellow-400 to-red-500 bg-clip-text text-transparent">
+                            🚨 BREAKING! ELON LAUNCHES MEMECOIN TODAY – WATCH NOW!
+                        </h2>
+
+                        {/* Video container */}
+                        <div className="relative rounded-xl overflow-hidden border border-gray-500 shadow-lg">
                             {!isVideoLoaded && (
-                                <div className="absolute inset-0 flex items-center justify-center bg-gray-100 bg-opacity-80 z-10">
-                                    <span className="text-gray-500 text-lg">Loading video...</span>
+                                <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 z-10">
+                                    <span className="text-gray-300 text-lg animate-pulse">Loading video...</span>
                                 </div>
                             )}
                             <video
                                 controls
                                 autoPlay
-                                className={`w-full transition-opacity duration-500 ${isVideoLoaded ? 'opacity-100' : 'opacity-0'
-                                    }`}
+                                className={`w-full transition-opacity duration-500 ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
                                 onLoadedData={handleVideoLoaded}
                             >
                                 <source src={vid} type="video/mp4" />
