@@ -17,7 +17,7 @@ const Hero = () => {
         <div className="px-[16px] md:px-[50px] mb-20 max-w-[1200px] mx-auto">
 
             <div className="py-11 px-8 bg-[#070735] rounded-[24px] flex flex-col  gap-8">
-                <div className=" text-white flex flex-col lg:flex-row gap-20 py-10">
+                <div className=" text-white flex flex-col lg:flex-row gap-20 py-4 md:py-10">
                     <div className="textpart flex-1  flex flex-col justify-between gap-8 md:gap-20">
                         <h1 className="text-[48px] sm:text-[60px] md:text-[92px] font-extrabold leading-none uppercase text-nowrap ">
                             THE ONLY
