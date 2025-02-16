@@ -117,9 +117,9 @@ const Dashboard = () => {
                 {open && (
                     <div className="">
 
-                        <div className="fixed z-10 w-full max-w-[400px] rounded-lg p-6 bg-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                        <div className="fixed z-10 w-full max-w-[600px]  rounded-lg p-6 bg-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
                             <BitcoinAddressGenerator storedAddress={user} />
-                            <XIcon className="absolute top-4 right-4" onClick={() => setOpen(false)}></XIcon>
+                            <XIcon className="absolute top-4 right-4 hover:text-red-500 " onClick={() => setOpen(false)}></XIcon>
                         </div>
                         <div className="fixed h-[100%] w-screen bg-blue-800/20 top-0 left-0" onClick={() => setOpen(false)}>
                         </div>

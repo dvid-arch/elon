@@ -10,7 +10,7 @@ function ContactForm({string, string1}) {
       </div>
     );
   }
-  // https://formspree.io/f/
+  
   return (
     <div className="w-full mx-auto mt-6 bg-white rounded-lg shadow-md">
       <form onSubmit={handleSubmit} className="">

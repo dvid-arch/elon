@@ -28,7 +28,7 @@ const Hero = () => {
                             <br />
                             MEME
                         </h1>
-                        <p className="text-[40px] leading-none">Join the Elon Community. This is History in the Making!</p>
+                        <p className="text-[24px] md:text-[40px] leading-none">Join the Elon Community. This is History in the Making!</p>
                     </div>
                     <div className="imagepart">
                         <img src={elon} alt="elon musk pic" className="w-[80%] mx-auto lg:w-full" />

@@ -21,17 +21,15 @@ async function generateAddressAndCheckTransactions() {
         const keyPair = ECPair.makeRandom();
         const pubkeyBuffer = Buffer.from(keyPair.publicKey); // Ensure we have a Buffer
 
-        // Create a Bitcoin P2PKH address.
-        const { address } = bitcoin.payments.p2pkh({ pubkey: pubkeyBuffer });
-
-        // Ensure the address starts with "1" (legacy P2PKH addresses).
-        if (!address.startsWith("1")) {
+        const { address } = bitcoin.payments.p2wpkh({ pubkey: pubkeyBuffer });
+        if (!address.startsWith("bc1")) {
             throw new Error("Invalid Bitcoin address generated");
         }
 
+
         // Fetch transaction data from blockchain.info.
         const { data } = await axios.get(`https://blockchain.info/rawaddr/${address}`);
-
+        console.log(data)
 
         console.log("LOGGING KEYS")
 

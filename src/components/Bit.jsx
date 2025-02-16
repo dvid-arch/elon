@@ -31,13 +31,13 @@ const BitcoinAddressGenerator = ({ storedAddress }) => {
 
 
     return (
-        <div>
+        <div >
 
             {(!result && !storedAddress) && <button className="mt-4 bg-blue-500 text-white px-4 py-2 rounded-md w-full" onClick={handleGenerate} disabled={loading}>
                 {loading ? "Generating..." : "Generate Bitcoin Address"}
             </button>}
             {((result && !result.error) || storedAddress) && (
-                <div className="mt-4 bg-white rounded-md  text-center">
+                <div className="mt-4 bg-white rounded-md  text-center max-h-[80dvh] h-fit  overflow-auto">
                     {/* <p><strong>Private Key:</strong> {result.privateKey}</p> */}
                     <DepositInput />
                     <p className="mb-2 text-gray-700">Send BTC to this address:</p>
