@@ -140,7 +140,7 @@ const FAQ = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
-        { question: "Yes, this is the only official ELON MEME, supported by Billionaire ELON MUSK and President Donald Trump" },
+        { question: "Is this an official Trump product?", answer: "Yes, this is the only official ELON MEME, supported by Billionaire ELON MUSK and President Donald Trump"},
         { question: "What is the official contract address and symbol for the Elon Meme?", answer: "CA: 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN" },
         { question: "How can I get Elon Memes?", answer: "Moonshot is the easiest way. Users sign up with an email address, can deposit with bitcoin and receive your $Elon within minutes." },
         { question: "What is a meme?", answer: "Merriam-Webster's meme noun: 1: an idea, behavior, style, or usage that spreads from person to person within a culture." },
