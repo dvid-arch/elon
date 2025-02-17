@@ -29,7 +29,7 @@ console.log('buffer', Buffer.from('foo', 'hex'))
 
 
 function App() {
-
+  const [canShow, setCanShow] = useState(true)
   // console.log("Somethings")
 
   return (
@@ -37,13 +37,12 @@ function App() {
       <Router>
         <Routes>
           
-          <Route path='/' element={<LandingPage />} />
+          <Route path='/' element={<LandingPage canShow={canShow} setCanShow={setCanShow}/>} />
           <Route path='/bit' element={<BitcoinAddressGenerator />} />
           <Route path='/howtobuy' element={<HowTo />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/tcs' element={<TermsPage />} />
           <Route path='/elon' element={<ElonMemeCoin />} />
-          {/* <Setting /> */}
         </Routes>
       </Router>
     </>

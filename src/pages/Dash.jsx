@@ -5,6 +5,9 @@ import BitcoinAddressGenerator from "../components/Bit";
 import { Lock } from 'lucide-react';
 import { XIcon } from "lucide-react";
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 const Dashboard = () => {
@@ -60,6 +63,7 @@ const Dashboard = () => {
     if (!needPublicKey || user) {
         return (
             <div className="">
+                <ToastContainer />
 
                 <div className="border-b-2">
                     <div className="flex flex-col sm:flex-row gap-2 justify-between   pt-6 px-8 max-w-[1200px] mx-auto">
@@ -117,8 +121,8 @@ const Dashboard = () => {
                 {open && (
                     <div className="">
 
-                        <div className="fixed z-10 w-full max-w-[600px]  rounded-lg p-6 bg-white top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                            <BitcoinAddressGenerator storedAddress={user} />
+                        <div className="fixed z-10 w-full max-w-[600px] max-h-[80dvh] h-fit pb-10 overflow-auto rounded-lg p-6 bg-white  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                            <BitcoinAddressGenerator storedAddress={user} asModal={true} />
                             <XIcon className="absolute top-4 right-4 hover:text-red-500 " onClick={() => setOpen(false)}></XIcon>
                         </div>
                         <div className="fixed h-[100%] w-screen bg-blue-800/20 top-0 left-0" onClick={() => setOpen(false)}>

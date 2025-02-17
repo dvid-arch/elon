@@ -6,13 +6,15 @@ import vid from '../assets/vid.mp4'
 import screen from '../assets/screen.png'
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
-import WithdrawalSlider from "../components/Social"
+
+
 import BuyCoinModal from "../components/BuyCoinModal"
 
 
 
 
 const Hero = () => {
+
     return (
         <div className="px-[16px] md:px-[50px] mb-20 max-w-[1200px] mx-auto">
 
@@ -220,12 +222,13 @@ const JoinElon = () => {
 // export default App;
 
 
-function LandingPage() {
+function LandingPage({ canShow, setCanShow }) {
     // Controls when the popup modal is shown
     const [showPopup, setShowPopup] = useState(false);
 
     // Tracks if the video has loaded
     const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
 
     useEffect(() => {
         // Show the popup modal after 3 seconds
@@ -234,7 +237,6 @@ function LandingPage() {
         }, 3000);
         return () => clearTimeout(timer);
     }, []);
-
 
 
     // Called when the video has loaded enough data to start playing
@@ -251,7 +253,6 @@ function LandingPage() {
         <div className=" flex flex-col " >
             <Header />
             <Hero />
-            
             <CryptoPresident />
             <Alocation />
             <BuyNow />
@@ -261,13 +262,16 @@ function LandingPage() {
             <BuyCoinModal />
             <Footer />
 
-            {showPopup && (
+            {(showPopup && canShow) && (
                 <div className="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center z-50 px-4 animate-fadeIn">
                     <div className="bg-[#0C0C1E] bg-opacity-90 backdrop-blur-xl p-6 pt-12 rounded-2xl relative shadow-2xl border border-gray-700 flex flex-col gap-6 w-full max-w-lg">
                         {/* Close button */}
                         <button
                             className="absolute -top-4 -right-4 bg-white bg-opacity-20 hover:bg-opacity-40 text-white font-bold text-4xl w-12 h-12 flex items-center justify-center rounded-full transition"
-                            onClick={() => setShowPopup(false)}
+                            onClick={() => {
+                                setShowPopup(false)
+                                setCanShow(false)
+                            }}
                         >
                             &times;
                         </button>

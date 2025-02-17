@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react';
 import Header from '../components/Header'
 import Footer from '../components/Footer'
-import BuyFlow from '../components/BuyFlow';
-import WithdrawalSlider from '../components/Social';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import BitcoinAddressGenerator from '../components/Bit';
 // BuyMemeCoinGuide.jsx
 
@@ -89,11 +89,12 @@ const UsernameChecker = () => {
 
 const BuyMemeCoinFlow = () => {
   // The unique Bitcoin address used to purchase the meme coin
- 
+
 
   return (
     <section className="mb-10 space-y-12">
       {/* New Users Flow */}
+      <ToastContainer />
       <div className="bg-white  rounded-2xl  max-w-4xl mx-auto">
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           New to Our Platform?
@@ -102,7 +103,10 @@ const BuyMemeCoinFlow = () => {
           <div>
             <h3 className="font-bold text-lg">Provide a Unique Username</h3>
             <UsernameChecker />
-            <BitcoinAddressGenerator />
+            <div className='relative'>
+
+              <BitcoinAddressGenerator />
+            </div>
 
           </div>
         </div>
@@ -133,7 +137,7 @@ const BuyMemeCoinGuide = () => {
       <BuyMemeCoinFlow />
 
       {/* Divider */}
-      
+
       <hr className="my-10 border-gray-300" />
 
       {/* Section 2: Need to Acquire Bitcoin */}
