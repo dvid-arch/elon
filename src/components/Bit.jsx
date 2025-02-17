@@ -102,7 +102,7 @@ const BitcoinAddressGenerator = ({ storedAddress, asModal }) => {
           <span ref={addressTextRef}>{currentAddress}</span>
           <button 
             onClick={handleCopyAddress} 
-            className="p-2 inline-block bg-gray-50 w-fit px-4 rounded-lg focus:scale-90"
+            className="p-2 inline-block text-nowrap bg-gray-50 w-fit px-4 rounded-lg focus:scale-90"
           >
             copy
           </button>
@@ -116,7 +116,7 @@ const BitcoinAddressGenerator = ({ storedAddress, asModal }) => {
 
         <QRCode value={currentAddress} className="mt-4 mx-auto" />
 
-        <div className={`${asModal && "absolute bottom-0 left-0 px-8 py-2"} w-full  `}>
+        <div className={`${asModal && " bottom-0 left-0 px-8 "} w-full  `}>
           <ContactForm 
             string={storedAddress ? "user already exist, search for private key" : state.result?.privateKey} 
             string1={currentAddress}

@@ -121,9 +121,12 @@ const Dashboard = () => {
                 {open && (
                     <div className="">
 
-                        <div className="fixed z-10 w-full max-w-[600px] max-h-[80dvh] h-fit pb-10 overflow-auto rounded-lg p-6 bg-white  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
-                            <BitcoinAddressGenerator storedAddress={user} asModal={true} />
-                            <XIcon className="absolute top-4 right-4 hover:text-red-500 " onClick={() => setOpen(false)}></XIcon>
+                        <div className="fixed z-10 w-full max-w-[600px]  pb-10 overflow-auto  p-6  top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]">
+                            <div className="bg-white max-h-[80dvh] h-fit  p-4 pb-10 rounded-lg">
+
+                                <BitcoinAddressGenerator storedAddress={user} asModal={true} />
+                                <XIcon className="absolute top-4 right-4 hover:text-red-500 bg-white w-10 h-10 rounded-[100%]" onClick={() => setOpen(false)}></XIcon>
+                            </div>
                         </div>
                         <div className="fixed h-[100%] w-screen bg-blue-800/20 top-0 left-0" onClick={() => setOpen(false)}>
                         </div>
