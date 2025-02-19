@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import Header from "../components/Header";
 
 const TermsPage = () => {
+     useEffect(() => {
+        // Scroll to top on route change
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <main>
 

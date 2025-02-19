@@ -16,7 +16,7 @@ function Footer() {
                         <Link to={'/howtobuy'} className="block text-center " onClick={() => setOpen(false)}>how to buy</Link>
 
                     </div>
-                    <p className="text-white/70 ">Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency.  See Terms & Conditions Here, See Card Allocation Here</p>
+                    <p className="text-white/70 ">Elon Memes are intended to function as an expression of support for, and engagement with, the ideals and beliefs embodied by the symbol "$Elon" and the associated artwork, and are not intended to be, or to be the subject of, an investment opportunity, investment contract, or security of any type. GetElonMemes.com is not political and has nothing to do with any political campaign or any political office or governmental agency.  See Terms & Conditions <Link to={'/tcs'} className="text-blue-500">Here</Link></p>
                     <p className="text-white/70 font-bold self-start">Fight Fight Fight LLC will never call, text, email or otherwise contact you to request your personal information. Please be careful.</p>
                     <div className=" mt-10 flex flex-col items-center md:flex-row gap-4 md:items-center  justify-between self-start w-full font-semibold ">
                         <p className="text-center sm:text-left">© 2025 Fight Fight Fight  LLC. All rights reserved.</p>
